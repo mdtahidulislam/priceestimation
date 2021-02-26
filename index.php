@@ -18,22 +18,22 @@
                 </a>                    
                 <ul class="main-menu">     
                   <li>
-                      <a href=" / "> Home </a>
+                      <a href="/"> Home </a>
                   </li>  
                   <li>
-                      <a href=" /collections/girl "> Girl </a>
+                      <a href=""> Girl </a>
                   </li> 
                   <li>
-                      <a href=" /collections/sale "> Sale </a>
+                      <a href=""> Sale </a>
                   </li> 
                   <li>
-                      <a href=" /blogs/news "> Blog </a>
+                      <a href=""> Blog </a>
                   </li> 
                   <li>
-                      <a href=" /pages/pages "> Pages </a>
+                      <a href=""> Pages </a>
                   </li>
                   <li>
-                      <a href=" /pages/contact "> Contact </a>
+                      <a href=""> Contact </a>
                   </li>   
                         
                     
