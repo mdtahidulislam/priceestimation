@@ -64,7 +64,7 @@ section.form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    margin: 50px 0;
 }
 fieldset {
     background-color: #eeeeee;
