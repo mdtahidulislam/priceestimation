@@ -10,7 +10,7 @@
         $query = "INSERT INTO product_type(product_type) VALUES ('$prodType')";
         $result = mysqli_query($conn, $query);
         }
-        echo "Data inserted successfully...";
+        echo "Data inserted successfully..";
     } else {
         echo "Please Enter Product Type...";
     }
