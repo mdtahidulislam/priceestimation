@@ -3,7 +3,7 @@
 	$hostname = "localhost"; 
 	$username = "root"; 
 	$password = ""; 
-	$dbname   = "pricestimation"; 
+	$dbname   = "price_estimation"; 
 	 
 	// Create database connection 
 	$conn = mysqli_connect($hostname, $username, $password, $dbname); 

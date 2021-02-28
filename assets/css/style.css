@@ -273,7 +273,7 @@ fieldset {
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s, -webkit-transform 0.25s;
 }
 
-/* product type out table */
+/* product type output table */
 .table_holder .table {
   font-size: 14px;
   color: #C7CACF;
@@ -285,6 +285,16 @@ fieldset {
 .table th {
   border-top: 1px solid #4e5d6c;
 }
+td.update i {
+  color: #17a2b8;
+}
+
+td.update i:hover {
+  color: #138496;
+}
+
+
+
   /* footer area */
   .footer-area {
     background: #4E5D6C;
