@@ -120,67 +120,7 @@ body {
   font-size: 14px;
   color: #101a23;
   font-weight: 700;
-  text-transform: capitalize;
   position: relative;
-}
-.mobile-menu .has-dropdown > .submenu,
-.mobile-menu .has-dropdown-1 > .sub-submenu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out 0s;
-}
-
-.mobile-menu .has-dropdown.active > a:after,
-.mobile-menu .has-dropdown-1.active > a:after {
-  transform: rotate(-90deg);
-}
-
-
-.mobile-menu .submenu li {
-  width: 100%;
-}
-
-.mobile-menu .sub-submenu {
-  flex-direction: column;
-}
-
-.mobile-menu .sub-submenu .sub-submenu-items {
-  width: 100%;
-}
-
-.mobile-menu .submenu-title {
-  font-size: 16px;
-  padding: 15px 0;
-  margin-left: 15px;
-  cursor: pointer;
-  margin-bottom: 0;
-}
-
-li.mega-menu a {
-  position: relative;
-}
-
-li.mega-menu a:after {
-  content: '\f053';
-  font-family: 'Font Awesome\ 5 free';
-  position: absolute;
-  right: 5px;
-  transition: all 0.3s ease-out 0s;
-}
-
-/*.mobile-menu ul.sub-submenu-items {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-}*/
-
-.mobile-menu ul.sub-submenu-items li {
-  margin-left: 30px;
-}
-
-.mobile-menu .submenu .menu-brand a {
-  width: 96%;
-  left: 15px;
 }
 
 .mobile-menu ul li a:hover {
@@ -188,6 +128,9 @@ li.mega-menu a:after {
   border-bottom-color: #000;
 }
 
+a.active {
+  color: #C75C5C !important;
+}
 /* modal form css */
 section.form {
     display: flex;
@@ -285,12 +228,25 @@ fieldset {
 .table th {
   border-top: 1px solid #4e5d6c;
 }
-td.update i {
+/* action btn css */
+td.action a {
+  text-decoration: none;
+}
+td.action i {
   color: #17a2b8;
 }
 
-td.update i:hover {
+td.action i:hover {
   color: #138496;
+}
+
+/* delete btn css */
+.deletebtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 7px;
 }
 
 

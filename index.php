@@ -72,9 +72,12 @@
               <tr>
                 <th scope="row"><?php echo $row["id"]; ?></th>
                 <td><?php echo $row["product_type"]; ?></td>
-                <td class="update">
-                    <a href="update.php?id=<?php echo urlencode($row['id']); ?>">
+                <td class="action">
+                    <a href="update.php?id=<?php echo urldecode($row['id']); ?>" class="mr-1" title="Edit">
                       <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="delete.php?id=<?php echo urldecode($row['id']); ?>" title="Delete">
+                      <i class="far fa-trash-alt"></i>
                     </a>
                 </td>
               </tr>

@@ -23,22 +23,10 @@
                   </a>                    
                   <ul class="main-menu">     
                     <li>
-                        <a href="/"> Home </a>
-                    </li>  
-                    <li>
-                        <a href=""> Girl </a>
-                    </li> 
-                    <li>
-                        <a href=""> Sale </a>
-                    </li> 
-                    <li>
-                        <a href=""> Blog </a>
-                    </li> 
-                    <li>
-                        <a href=""> Pages </a>
+                        <a href="/" class="active">Product Type</a>
                     </li>
                     <li>
-                        <a href=""> Contact </a>
+                        <a href="">Product</a>
                     </li> 
                   </ul>
                   <div class="menu-bar d-md-none d-sm-block">
@@ -62,22 +50,10 @@
     <nav class="mobile-menu">
         <ul id="mobile-menu-active">
           <li>
-              <a href="/">Home</a>
+              <a href="/" class="active">Product Type</a>
           </li>
           <li>
-              <a href="/collections/girl">Girl</a>
-          </li>
-          <li>
-              <a href="/collections/sale">Sale</a>
-          </li>
-          <li>
-              <a href="/blogs/news">Blog</a>
-          </li>
-          <li>
-              <a href="/pages/pages">Pages</a>
-          </li>
-          <li>
-              <a href="/pages/contact">Contact</a>
+              <a href="">Product</a>
           </li>
         </ul>
     </nav>
