@@ -26,7 +26,7 @@
                         <a href="/" class="active">Product Type</a>
                     </li>
                     <li>
-                        <a href="">Product</a>
+                        <a href="product.php">Product</a>
                     </li> 
                   </ul>
                   <div class="menu-bar d-md-none d-sm-block">
@@ -53,7 +53,7 @@
               <a href="/" class="active">Product Type</a>
           </li>
           <li>
-              <a href="">Product</a>
+              <a href="product.php">Product</a>
           </li>
         </ul>
     </nav>

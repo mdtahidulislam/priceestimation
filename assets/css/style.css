@@ -173,17 +173,18 @@ fieldset {
 .modal-content {
 	position: relative;
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
     background-color: #DEE1E6;
-    padding: 1rem 1.5rem;
+    /* padding: 1rem 1.5rem; */
     width: 24rem;
     border-radius: 0.5rem;
 	width: 70%;
-	text-align: center;
+  height: 500px;
+  overflow-y: auto;
 }
 
 .close-button {
