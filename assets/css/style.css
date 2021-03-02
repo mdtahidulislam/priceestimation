@@ -151,7 +151,7 @@ fieldset {
     margin-bottom: 0;
     font-size: 15px;
   }
-
+/* 
   .modal {
     position: fixed;
     left: 0;
@@ -179,7 +179,6 @@ fieldset {
         -ms-transform: translate(-50%);
             transform: translate(-50%);
     background-color: #DEE1E6;
-    /* padding: 1rem 1.5rem; */
     width: 24rem;
     border-radius: 0.5rem;
 	width: 70%;
@@ -216,7 +215,8 @@ fieldset {
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s, -webkit-transform 0.25s;
 }
-
+ */
+ 
 /* product type output table */
 .table_holder .table {
   font-size: 14px;
@@ -251,7 +251,25 @@ td.action i:hover {
 }
 
 
+/* ============================================ product page css ====================================== */
+/* customize bootstrap modal */
+.modal-header {
+  background: #337AB7;
+  color: #fff;
+}
 
+.modal-title {
+  font-size: 16px;
+}
+
+.modal-footer {
+  background: #337AB7;
+}
+
+.modal-body {
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
   /* footer area */
   .footer-area {
     background: #4E5D6C;
