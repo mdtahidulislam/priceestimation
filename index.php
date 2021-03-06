@@ -5,44 +5,42 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 titile_bar text-center">
-        <button class="btn btn-info btn-md mt-4 mb-3 trigger" title="New Item">
-          <span class="glyphicon glyphicon-tag">&nbsp;</span>New Item
-        </button>
+        <a href="#addnewtype" data-toggle="modal" class="btn btn-primary btn-sm mt-3 mb-3">Add New</a>
       </div>
     </div>
   </div>
 </section>
 <!-- end add item btn -->
 
-<!-- product type form area -->
-<section class="form pt-3 pb-3 modal">
-  <div class="modal-content">
-    <span class="close-button">X</span>
-      <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <form name="product_type" id="product_type" action="create.php" method="post">
-                  <fieldset>
-                    <legend>Product Type</legend>
-                    <div id="dynamic_field">
-                      <div class="form-row">
-                        <div class="form-group col-12">
-                          <input type="text" name="producttype[]" required placeholder="Enter Product Type" class="form-control"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <input type="button" name="add" id="add" class="btn btn-primary mr-3" value="Add More Type">
-                        <!-- <button type="button" name="add" id="add" class="btn btn-primary">Add More Type</button> -->
-                        <input type="submit" class="btn btn-success" name="submit" id="submit" value="Submit">
-                    </div>
-                  </fieldset>
-                </form>
-            </div>
-        </div>
+<!-- Product Type Modal -->
+<div class="modal fade" id="addnewtype" tabindex="-1" role="dialog" aria-labelledby="addnewtypeLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
+      <form method="POST" action="create.php" class="form-horizontal" enctype="multipart/form-data" >
+        <div class="modal-body">
+          <fieldset>
+            <legend>Product Type</legend>
+            <div id="dynamic_field">
+              <div class="form-row">
+                <div class="form-group col-12">
+                  <input type="text" name="producttype" required placeholder="Enter Product Type" class="form-control"/>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit</a>
+          <input type="hidden" name="action" value="addtype">
+        </div>
+      </form>
+    </div>
   </div>
-</section><!-- end form area -->
+</div>
 
 <!-- product type output form area -->
 <section class="table_holder product-type-out pb-3">
@@ -75,9 +73,6 @@
                 <td class="action">
                     <a href="update.php?id=<?php echo urldecode($row['id']); ?>" class="mr-1" title="Edit">
                       <i class="fas fa-edit"></i>
-                    </a>
-                    <a href="delete.php?id=<?php echo urldecode($row['id']); ?>" title="Delete">
-                      <i class="far fa-trash-alt"></i>
                     </a>
                 </td>
               </tr>

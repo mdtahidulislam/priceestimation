@@ -23,6 +23,8 @@
         header("Location:index.php");
     }
 ?>
+
+
 <!-- product type update form -->
 <section class="pt-4 pb-4">
     <div class="container">
@@ -43,6 +45,7 @@
                         <!-- 
                         <input type="button" name="add" id="add" class="btn btn-primary mr-3" value="Add More Type">
                         <button type="button" name="add" id="add" class="btn btn-primary">Add More Type</button> -->
+                        <input type="hidden" name="action"  value="updatetype">
                         <input type="submit" class="btn btn-success" name="update" id="update" value="Update">
                     </div>
                     </fieldset>

@@ -23,10 +23,10 @@
                   </a>                    
                   <ul class="main-menu">     
                     <li>
-                        <a href="/" class="active">Product Type</a>
+                        <a href="index.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Product Type</a>
                     </li>
                     <li>
-                        <a href="product.php">Product</a>
+                        <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
                     </li> 
                   </ul>
                   <div class="menu-bar d-md-none d-sm-block">
@@ -50,10 +50,10 @@
     <nav class="mobile-menu">
         <ul id="mobile-menu-active">
           <li>
-              <a href="/" class="active">Product Type</a>
+              <a href="index.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Product Type</a>
           </li>
           <li>
-              <a href="product.php">Product</a>
+              <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
           </li>
         </ul>
     </nav>

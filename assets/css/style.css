@@ -124,8 +124,10 @@ body {
 }
 
 .mobile-menu ul li a:hover {
-  color: #A3A3A3;
+  color: #C75C5C;
   border-bottom-color: #000;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 a.active {

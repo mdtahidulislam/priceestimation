@@ -15,24 +15,7 @@ closeMobileMenu.addEventListener( 'click', ()=> {
   mobileMenu.classList.remove('show');
 } );
 
-// modal form js
-// var modal = document.querySelector(".modal");
-// var trigger = document.querySelector(".trigger");
-// var closeButton = document.querySelector(".close-button");
-
-// function toggleModal() {
-//     modal.classList.toggle("show-modal");
-// }
-
-// function windowOnClick(event) {
-//     if (event.target === modal) {
-//         toggleModal();
-//     }
-// }
-
-// trigger.addEventListener("click", toggleModal);
-// closeButton.addEventListener("click", toggleModal);
-// window.addEventListener("click", windowOnClick);
+// add active class in nav menu item
 
 
 

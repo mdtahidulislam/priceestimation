@@ -6,21 +6,19 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 titile_bar text-center">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                New Item
-              </button>
+        <button type="button" class="btn btn-primary mt-3 mb-3" data-toggle="modal" data-target="#addproduct">New Item</button>
       </div>
     </div>
   </div>
 </section>
 <!-- end add item btn -->
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Add Product Modal -->
+<div class="modal fade" id="addproduct" tabindex="-1" role="dialog" aria-labelledby="addproductLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+        <h5 class="modal-title" id="addproductLabel">Product Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -49,13 +47,14 @@
           </div>
           <div class="form-group">
             <label>Product Wholesale Price:</label>
-            <input type="text" name="wholesaleprice" class="form-control" required placeholder="Enter Wholesale Price">
+            <input type="text" name="wholesale" class="form-control" required placeholder="Enter Wholesale Price">
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <!-- <button type="psubmit"  class="btn btn-primary">Submit</button> -->
-          <input type="submit" class="btn btn-success" name="psubmit" id="submit" value="Submit">
+          <button type="submit"  class="btn btn-primary">Submit</button>
+          <!-- <input type="submit" class="btn btn-success" name="psubmit" id="submit" value="Submit"> -->
+          <input type="hidden" name="action" value="addproduct">
         </div>
       </form>
     </div>
@@ -102,9 +101,10 @@
                 <td><?php echo $prow['unitprice']; ?></td>
                 <td><?php echo $prow['wholesale']; ?></td>
                 <td class="action">
-                    <a href="update.php?id=<?php echo urldecode($prow['pid']); ?>" class="mr-1" title="Edit">
+                    <a href="#update<?php echo urldecode($prow['pid']); ?>" class="mr-1" title="Edit" data-toggle="modal" >
                       <i class="fas fa-edit"></i>
                     </a>
+                    <?php include('product_update.php');?>
                 </td>
               </tr>
               <?php      
@@ -112,7 +112,7 @@
                 } else {
                   echo "0 results found";
                 }
-                mysqli_close($conn);
+                //mysqli_close($conn);
               ?>
             </tbody>
           </table>
