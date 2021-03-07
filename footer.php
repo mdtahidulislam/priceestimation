@@ -4,6 +4,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="assets/js/datatable.js"></script>
 <script src="assets/js/main.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -22,6 +23,11 @@
       $('#row'+button_id+'').remove();  
     });
   });
+</script>
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
 </script>
 </body>
 </html>

@@ -101,7 +101,7 @@
                 <td><?php echo $prow['unitprice']; ?></td>
                 <td><?php echo $prow['wholesale']; ?></td>
                 <td class="action">
-                    <a href="#update<?php echo urldecode($prow['pid']); ?>" class="mr-1" title="Edit" data-toggle="modal" >
+                    <a href="#edit<?php echo urldecode($prow['pid']); ?>" class="mr-1" title="Edit" data-toggle="modal" >
                       <i class="fas fa-edit"></i>
                     </a>
                     <?php include('product_update.php');?>

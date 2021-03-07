@@ -8,7 +8,7 @@
             $query = "INSERT INTO product_type(product_type) VALUES ('$prodType')";
             $result = mysqli_query($conn, $query);
             echo "Data inserted successfully..";
-            header("Location: index.php");
+            header("Location: type.php");
         } else if($_POST['action'] == 'addproduct'){
             //get input fileds
             $prodname = $_POST['prodname'];

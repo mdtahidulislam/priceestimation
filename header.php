@@ -23,11 +23,11 @@
                   </a>                    
                   <ul class="main-menu">     
                     <li>
-                        <a href="index.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Product Type</a>
+                        <a href="type.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Type</a>
                     </li>
                     <li>
                         <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
-                    </li> 
+                    </li>  
                   </ul>
                   <div class="menu-bar d-md-none d-sm-block">
                       <i class="fas fa-bars"></i>

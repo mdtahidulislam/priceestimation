@@ -1,4 +1,4 @@
-<div class="modal fade" id="edit<?php echo urldecode($prow['pid']); ?>" tabindex="-1" role="dialog" aria-labelledby="addLabel" aria-hidden="true">
+<div class="modal fade" id="edit<?php echo urldecode($row['id']); ?>" tabindex="-1" role="dialog" aria-labelledby="addLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -11,17 +11,17 @@
             </div>
             <div class="modal-body">
                 <?php
-                  $pid = $prow['pid'];
-                  $query = "SELECT * FROM tbl_product WHERE id = $pid";
-                  $getdata = mysqli_query($conn, $query);
-                  $result = mysqli_fetch_assoc($getdata);
+                $id = $row['id'];
+                $query = "SELECT * FROM product_type WHERE id = $id";
+                $getdata = mysqli_query($conn, $query);
+                $result = mysqli_fetch_assoc($getdata);
                 ?>
-                <form method="POST" action="update.php?pid=<?php echo $pid; ?>" enctype="multipart/form-data">
+                <form method="POST" action="update.php?id=<?php echo $result['id']; ?>" enctype="multipart/form-data">
                     <!-- form input field -->
                     <div class="form-row">
                         <div class="form-group col-12">
-                            <input type="hidden" name="id" value="<?php echo $pid; ?>">
-                            Product Type: <input type="text" name="prodname" required value="<?php echo $result['prodname']; ?>" class="form-control"/>
+                            <input type="hidden" name="id" value="<?php echo $id; ?>">
+                            Product Type: <input type="text" name="producttype" required value="<?php echo $result['product_type']; ?>" class="form-control"/>
                         </div>
                     </div>
                     <!-- form footer -->
