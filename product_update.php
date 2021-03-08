@@ -12,23 +12,50 @@
             <div class="modal-body">
                 <?php
                   $pid = $prow['pid'];
-                  $query = "SELECT * FROM tbl_product WHERE id = $pid";
+                  $query = "SELECT * FROM tbl_product WHERE pid = $pid";
                   $getdata = mysqli_query($conn, $query);
                   $result = mysqli_fetch_assoc($getdata);
                 ?>
                 <form method="POST" action="update.php?pid=<?php echo $pid; ?>" enctype="multipart/form-data">
                     <!-- form input field -->
                     <div class="form-row">
+                        
                         <div class="form-group col-12">
-                            <input type="hidden" name="id" value="<?php echo $pid; ?>">
-                            Product Type: <input type="text" name="prodname" required value="<?php echo $result['prodname']; ?>" class="form-control"/>
+                            <label>Product Name:</label>
+                            <input type="hidden" name="pid" value="<?php echo $pid; ?>">
+                            <input type="text" name="prodname" class="form-control" required value="<?php echo $result['prodname']; ?>">
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Product Description:</label>
+                            <input type="hidden" name="pid" value="<?php echo $pid; ?>">
+                            <input type="text" name="descp" class="form-control" required value="<?php echo $result['descp']; ?>">
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Product Generation:</label>
+                            <input type="hidden" name="pid" value="<?php echo $pid; ?>">
+                            <input type="text" name="generation" class="form-control" required value="<?php echo $result['generation']; ?>">
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Product Model:</label>
+                            <input type="hidden" name="pid" value="<?php echo $pid; ?>">
+                            <input type="text" name="model" class="form-control" required value="<?php echo $result['model']; ?>">
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Product Unit Price:</label>
+                            <input type="hidden" name="pid" value="<?php echo $pid; ?>">
+                            <input type="text" name="unitprice" class="form-control" required value="<?php echo $result['unitprice']; ?>">
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Product Wholesale Price:</label>
+                            <input type="hidden" name="pid" value="<?php echo $pid; ?>">
+                            <input type="text" name="wholesale" class="form-control" required value="<?php echo $result['wholesale']; ?>">
                         </div>
                     </div>
                     <!-- form footer -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <input type="hidden" name="action" value="updatetype">
+                        <input type="hidden" name="action" value="updateproduct">
                         <button type="submit" class="btn btn-warning">Update</button>
                     </div>
                 </form>

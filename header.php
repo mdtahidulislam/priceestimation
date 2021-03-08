@@ -18,15 +18,18 @@
           <div class="row">
             <div class="col-md-12">
               <div class="menu-area-container">
-                  <a href="index.php" class="logo">
+                  <a href="#" class="logo">
                     <img src="assets/img/zpc-logo.png" alt="ZeroPointComputing">
                   </a>                    
                   <ul class="main-menu">     
                     <li>
-                        <a href="type.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Type</a>
+                        <a href="type.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'type.php' ? 'active' : '';?>">Type</a>
                     </li>
                     <li>
                         <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
+                    </li>  
+                    <li>
+                        <a href="manufacture.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'manufacture.php' ? 'active' : '';?>">Manufacture</a>
                     </li>  
                   </ul>
                   <div class="menu-bar d-md-none d-sm-block">
@@ -50,10 +53,13 @@
     <nav class="mobile-menu">
         <ul id="mobile-menu-active">
           <li>
-              <a href="index.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Product Type</a>
+              <a href="type.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'type.php' ? 'active' : '';?>">Product Type</a>
           </li>
           <li>
               <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
+          </li>
+          <li>
+              <a href="manufacture.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'manufacture.php' ? 'active' : '';?>">Manufacture</a>
           </li>
         </ul>
     </nav>

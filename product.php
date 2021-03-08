@@ -68,7 +68,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="table-responsive">
-          <table class="table table-hover">
+          <table class="table table-hover" id="example">
             <thead>
               <tr>
                 <th scope="col">PId</th>

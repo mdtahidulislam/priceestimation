@@ -23,10 +23,12 @@
             $pquery_run = mysqli_query($conn, $pquery);
             echo "Data inserted successfully..";
             header("Location: product.php");
+        } else if($_POST['action'] == 'addmanufacture'){
+            $manufacture_name = $_POST['manufacture_name'];
+            $mquery = "INSERT INTO tbl_manufacture(manufacture_name) VALUES ('$manufacture_name')";
+            $mquery_run = mysqli_query($conn, $mquery);
+            header("Location: manufacture.php");
         }
-        
     }
-
-
 ?>
 
