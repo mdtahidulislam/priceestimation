@@ -153,73 +153,16 @@ fieldset {
     margin-bottom: 0;
     font-size: 15px;
   }
-/* 
-  .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
-    -webkit-transition: visibility 0s linear 0.25s, opacity 0.25s 0s, -webkit-transform 0.25s;
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, -webkit-transform 0.25s;
-    -o-transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s, -webkit-transform 0.25s;
-}
-.modal-content {
-	position: relative;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    -webkit-transform: translate(-50%);
-        -ms-transform: translate(-50%);
-            transform: translate(-50%);
-    background-color: #DEE1E6;
-    width: 24rem;
-    border-radius: 0.5rem;
-	width: 70%;
-  height: 500px;
-  overflow-y: auto;
-}
-
-.close-button {
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-    width: 2rem;
-    line-height: 2rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
-	font-size: 1rem;
-  font-weight: 700;
-  z-index: 9;
-}
-.close-button:hover {
-    background-color: darkgray;
-}
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: scale(1.0);
-        -ms-transform: scale(1.0);
-            transform: scale(1.0);
-    -webkit-transition: visibility 0s linear 0s, opacity 0.25s 0s, -webkit-transform 0.25s;
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, -webkit-transform 0.25s;
-    -o-transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s, -webkit-transform 0.25s;
-}
- */
  
 /* product type output table */
+.table-responsive {
+  display: inline-table;
+}
+@media (max-width: 768px) {
+  .table-responsive {
+    display: block;
+  }
+}
 .table_holder .table {
   font-size: 14px;
   color: #C7CACF;
@@ -242,6 +185,46 @@ td.action i {
 td.action i:hover {
   color: #138496;
 }
+
+/* datatables custom css */
+.table.dataTable tbody tr {
+  background-color: transparent;
+}
+
+label {
+  color: #C7CACF;
+}
+
+div#example_length select {
+  color: #C7CACF;
+}
+
+.dataTables_info {
+  color: #C7CACF !important;
+}
+
+a.paginate_button {
+  color: #C7CACF !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+  color: #C7CACF !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: #7e7e7e !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: #fff !important;
+  border: 1px solid #979797;
+  background: white; 
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: transparent !important;
+  border-color: transparent;
+}
+
+
+
 
 /* delete btn css */
 .deletebtn {
@@ -276,3 +259,31 @@ td.action i:hover {
   .footer-area {
     background: #4E5D6C;
   }
+
+/* index page css */
+
+/* .prod-type {
+  display: none;
+}
+
+.prod-name {
+  display: none;
+}
+.user-submit {
+  display: none;
+} */
+
+.ms-options ul {
+  list-style: none;
+  padding: 7px;
+}
+
+.ms-options label {
+  color: inherit;
+}
+
+.ms-options-wrap > .ms-options > ul input[type="checkbox"] {
+  top: 50%;
+  transform: translateY(-50%);
+}
+ 

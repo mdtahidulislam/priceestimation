@@ -67,56 +67,54 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="table-responsive">
-          <table class="table table-hover" id="example">
-            <thead>
-              <tr>
-                <th scope="col">PId</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Generation</th>
-                <th scope="col">Model</th>
-                <th scope="col">Unit Price</th>
-                <th scope="col">Wholesale Price</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- form output -->
-              <?php
-                // db connection
-                //include_once('config.php');
-                // get data from DB & show
-                $psql = "SELECT * FROM tbl_product";
-                $getpsql = mysqli_query($conn, $psql);
-                if (mysqli_num_rows($getpsql) > 0) {
-                  while($prow = mysqli_fetch_assoc($getpsql)) {
-              ?>
-              <tr>
-                <th scope="row"><?php echo $prow["pid"]; ?></th>
-                <td><?php echo $prow['prodname']; ?></td>
-                <td><?php echo $prow['descp']; ?></td>
-                <td><?php echo $prow['generation']; ?></td>
-                <td><?php echo $prow['model']; ?></td>
-                <td><?php echo $prow['unitprice']; ?></td>
-                <td><?php echo $prow['wholesale']; ?></td>
-                <td class="action">
-                    <a href="#edit<?php echo urldecode($prow['pid']); ?>" class="mr-1" title="Edit" data-toggle="modal" >
-                      <i class="fas fa-edit"></i>
-                    </a>
-                    <?php include('product_update.php');?>
-                </td>
-              </tr>
-              <?php      
-                  }
-                } else {
-                  echo "0 results found";
+        <table class="table table-hover table-responsive" id="example">
+          <thead>
+            <tr>
+              <th scope="col">PId</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Generation</th>
+              <th scope="col">Model</th>
+              <th scope="col">Unit Price</th>
+              <th scope="col">Wholesale Price</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- form output -->
+            <?php
+              // db connection
+              //include_once('config.php');
+              // get data from DB & show
+              $psql = "SELECT * FROM tbl_product";
+              $getpsql = mysqli_query($conn, $psql);
+              if (mysqli_num_rows($getpsql) > 0) {
+                while($prow = mysqli_fetch_assoc($getpsql)) {
+            ?>
+            <tr>
+              <th scope="row"><?php echo $prow["pid"]; ?></th>
+              <td><?php echo $prow['prodname']; ?></td>
+              <td><?php echo $prow['descp']; ?></td>
+              <td><?php echo $prow['generation']; ?></td>
+              <td><?php echo $prow['model']; ?></td>
+              <td><?php echo $prow['unitprice']; ?></td>
+              <td><?php echo $prow['wholesale']; ?></td>
+              <td class="action">
+                  <a href="#edit<?php echo urldecode($prow['pid']); ?>" class="mr-1" title="Edit" data-toggle="modal" >
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <?php include('product_update.php');?>
+              </td>
+            </tr>
+            <?php      
                 }
-                //mysqli_close($conn);
-              ?>
-            </tbody>
-          </table>
-        </div>
+              } else {
+                echo "0 results found";
+              }
+              //mysqli_close($conn);
+            ?>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

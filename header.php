@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/datatable.css">
+  <link rel="stylesheet" href="assets/css/multiselect.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
@@ -18,10 +20,13 @@
           <div class="row">
             <div class="col-md-12">
               <div class="menu-area-container">
-                  <a href="#" class="logo">
+                  <a href="index.php" class="logo">
                     <img src="assets/img/zpc-logo.png" alt="ZeroPointComputing">
                   </a>                    
                   <ul class="main-menu">     
+                    <li>
+                        <a href="index.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Home</a>
+                    </li>
                     <li>
                         <a href="type.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'type.php' ? 'active' : '';?>">Type</a>
                     </li>
@@ -52,6 +57,9 @@
     <!-- side-mobile-menu start -->
     <nav class="mobile-menu">
         <ul id="mobile-menu-active">
+          <li>
+              <a href="index.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Home</a>
+          </li>
           <li>
               <a href="type.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'type.php' ? 'active' : '';?>">Product Type</a>
           </li>
