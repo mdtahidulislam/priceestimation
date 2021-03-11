@@ -17,9 +17,18 @@
             $model = $_POST['model'];
             $unitprice = $_POST['unitprice'];
             $wholesaleprice = $_POST['wholesale'];
+            // for image upload
+            $permited = array('jpg', 'jpeg', 'png', 'gif', 'svg'); // img extension
+            $file_name = $_FILES['img']['name']; // img name
+            $file_size = $_FILES['img']['size']; // img size
+            $file_tmp = $_FILES['img']['tmp_name']; // img temporary path link
+            $folder = "uploads/";
+            move_uploaded_file($file_tmp, $folder.$file_name);
+
+
             // insert query
-            $pquery = "INSERT INTO tbl_product (prodname, descp,  generation, model, unitprice, wholesale) 
-                    VALUES('$prodname', '$description', '$generation', '$model', '$unitprice', '$wholesaleprice')";
+            $pquery = "INSERT INTO tbl_product (prodname, descp,  generation, model, unitprice, wholesale, img) 
+                    VALUES('$prodname', '$description', '$generation', '$model', '$unitprice', '$wholesaleprice', '$file_name')";
             $pquery_run = mysqli_query($conn, $pquery);
             echo "Data inserted successfully..";
             header("Location: product.php");

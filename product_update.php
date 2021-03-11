@@ -50,6 +50,10 @@
                             <input type="hidden" name="pid" value="<?php echo $pid; ?>">
                             <input type="text" name="wholesale" class="form-control" required value="<?php echo $result['wholesale']; ?>">
                         </div>
+                        <div class="form-group col-12">
+                            <label>Upload Image:</label> <br>
+                            <input type="file" name="img" required value="<?php echo $result['img']; ?>">
+                        </div>
                     </div>
                     <!-- form footer -->
                     </div>

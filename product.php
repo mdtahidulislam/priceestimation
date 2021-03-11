@@ -49,6 +49,10 @@
             <label>Product Wholesale Price:</label>
             <input type="text" name="wholesale" class="form-control" required placeholder="Enter Wholesale Price">
           </div>
+          <div class="form-group">
+            <label>Upload Image:</label> <br>
+            <input type="file" name="img" class="" required>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -77,6 +81,7 @@
               <th scope="col">Model</th>
               <th scope="col">Unit Price</th>
               <th scope="col">Wholesale Price</th>
+              <th scope="col">Image</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -99,6 +104,7 @@
               <td><?php echo $prow['model']; ?></td>
               <td><?php echo $prow['unitprice']; ?></td>
               <td><?php echo $prow['wholesale']; ?></td>
+              <td><img width="40px" height="40px" src="uploads/<?php echo $prow['img']; ?>"></td>
               <td class="action">
                   <a href="#edit<?php echo urldecode($prow['pid']); ?>" class="mr-1" title="Edit" data-toggle="modal" >
                     <i class="fas fa-edit"></i>
