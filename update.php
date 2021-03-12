@@ -26,6 +26,7 @@
             $file_size = $_FILES['img']['size']; // img size
             $file_tmp = $_FILES['img']['tmp_name']; // img temporary path link
             $folder = "uploads/";
+            unlink($folder.$file_name);
             move_uploaded_file($file_tmp, $folder.$file_name);
             $puquery = "UPDATE tbl_product
             SET prodname = '$prodname',
@@ -38,6 +39,7 @@
             WHERE pid = $pid
             ";
             $updateprow = mysqli_query($conn, $puquery);
+            
             header("Location: product.php");
         } else if($_POST['action'] == 'updatemanufacture'){
             $mid = $_POST['mid'];
