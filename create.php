@@ -37,6 +37,16 @@
             $mquery = "INSERT INTO tbl_manufacture(manufacture_name) VALUES ('$manufacture_name')";
             $mquery_run = mysqli_query($conn, $mquery);
             header("Location: manufacture.php");
+        } else if ($_POST['action'] == 'usersubmit') {
+            // get input field
+            $manufacture = implode(" , ", $_POST['manufacture_name']);
+            $prodtype = implode(" , ", $_POST['prod_type']) ;
+            $prodname = implode(" , ", $_POST['prod_name']) ;
+
+            // insert query
+            $query = "INSERT INTO tbl_user_order (manufacture, producttype, productname) VALUES('$manufacture', '$prodtype', '$prodname')";
+            $query_run = mysqli_query($conn, $query);
+            header('Location: index.php');
         }
     }
 ?>

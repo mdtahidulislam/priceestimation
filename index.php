@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <?php include('header.php'); ?>
 <?php include('config.php'); ?>
 
@@ -5,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <form action="">
+                <form action="create.php" method="post" enctype="multipasrt/form-data">
                     <div class="form-group mt-3">
                         <label>Select Manufacture</label>
                         <select multiple name="manufacture_name[]" class="form-control" id="manufacture-name">
@@ -52,6 +55,7 @@
                 </form>
             </div>
         </div>
+
     </div>
 </main>
 

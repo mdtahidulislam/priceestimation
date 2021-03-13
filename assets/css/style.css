@@ -223,6 +223,12 @@ a.paginate_button {
   border-color: transparent;
 }
 
+table.dataTable tbody th, 
+table.dataTable tbody td {
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
 
 
 
@@ -254,6 +260,15 @@ a.paginate_button {
 .modal-body {
   max-height: calc(100vh - 150px);
   overflow-y: auto;
+}
+
+td.prod-img {
+  width: 8%;
+}
+
+td.prod-img img {
+  max-width: 100%;
+  height: auto;
 }
   /* footer area */
   .footer-area {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2021 at 12:46 PM
+-- Generation Time: Mar 13, 2021 at 01:09 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -58,18 +58,19 @@ INSERT INTO `product_type` (`id`, `product_type`) VALUES
 
 CREATE TABLE `tbl_manufacture` (
   `mid` int(11) NOT NULL,
-  `manufacture_name` varchar(255) NOT NULL
+  `manufacture_name` varchar(255) NOT NULL,
+  `ptid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_manufacture`
 --
 
-INSERT INTO `tbl_manufacture` (`mid`, `manufacture_name`) VALUES
-(1, 'Asus Bangla'),
-(2, 'Lenovo'),
-(3, 'HP'),
-(4, 'Naogaor');
+INSERT INTO `tbl_manufacture` (`mid`, `manufacture_name`, `ptid`) VALUES
+(1, 'Asus Bangla', 19),
+(2, 'Lenovo', 19),
+(3, 'HP', 19),
+(4, 'Naogaor', 19);
 
 -- --------------------------------------------------------
 
@@ -84,21 +85,25 @@ CREATE TABLE `tbl_product` (
   `generation` varchar(100) NOT NULL,
   `model` varchar(100) NOT NULL,
   `unitprice` decimal(6,2) NOT NULL,
-  `wholesale` decimal(6,2) NOT NULL
+  `wholesale` decimal(6,2) NOT NULL,
+  `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`pid`, `prodname`, `descp`, `generation`, `model`, `unitprice`, `wholesale`) VALUES
-(1, 'Latop', 'Description goes here', '5th', 'asus', '9999.99', '9999.99'),
-(2, 'player', 'description', '4th', 'wetewtwe', '123.00', '122.00'),
-(3, 'Computer', 'gajdgsjhagd', '5th Gen', 'ASUS 01', '9999.99', '9999.99'),
-(4, 'Computer', 'grweiyqiuwryiuqw', '1 st gen', 'deshi', '9999.99', '9999.99'),
-(5, 'notun', 'aHRFITQWEURFTGUIWYT', '5th Gen', 'ASUS 01', '9999.99', '9999.99'),
-(6, 'kolom', 'jhfdkasfjg', 'hfkjh', 'hth', '9999.99', '2124.00'),
-(7, 'alu', 'weuouio', 'uerouowu', 'ouweoriuo', '9999.99', '243.00');
+INSERT INTO `tbl_product` (`pid`, `prodname`, `descp`, `generation`, `model`, `unitprice`, `wholesale`, `img`) VALUES
+(1, 'Latop', 'Description goes here', '5th', 'asus', '9999.99', '9999.99', ''),
+(2, 'player', 'description', '4th', 'wetewtwe', '123.00', '122.00', ''),
+(3, 'Computer', 'gajdgsjhagd', '5th Gen', 'ASUS 01', '9999.99', '9999.99', ''),
+(4, 'Computer', 'grweiyqiuwryiuqw', '1 st gen', 'deshi', '9999.99', '9999.99', ''),
+(5, 'notun', 'aHRFITQWEURFTGUIWYT', '5th Gen', 'ASUS 01', '9999.99', '9999.99', ''),
+(6, 'kolom', 'jhfdkasfjg', 'hfkjh', 'hth', '9999.99', '2124.00', ''),
+(7, 'alu', 'weuouio', 'uerouowu', 'ouweoriuo', '9999.99', '243.00', ''),
+(8, 'mobile', 'description', '3rd ', '1100', '4000.00', '3000.00', ''),
+(9, 'Computer', 'gajdgsjhagd', '5th Gen', 'ouweoriuo', '9999.99', '123.00', ''),
+(10, 'mobile', 'description', '1 st gen', '1100', '4000.00', '3000.00', 'zpc-logo.png');
 
 --
 -- Indexes for dumped tables
@@ -142,7 +147,7 @@ ALTER TABLE `tbl_manufacture`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

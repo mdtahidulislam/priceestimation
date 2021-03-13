@@ -104,7 +104,7 @@
               <td><?php echo $prow['model']; ?></td>
               <td><?php echo $prow['unitprice']; ?></td>
               <td><?php echo $prow['wholesale']; ?></td>
-              <td><img width="40px" height="40px" src="uploads/<?php echo $prow['img']; ?>"></td>
+              <td class="prod-img"><img src="uploads/<?php echo $prow['img']; ?>"></td>
               <td class="action">
                   <a href="#edit<?php echo urldecode($prow['pid']); ?>" class="mr-1" title="Edit" data-toggle="modal" >
                     <i class="fas fa-edit"></i>
