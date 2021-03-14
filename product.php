@@ -34,6 +34,32 @@
             <input type="text" name="descp" class="form-control" required placeholder="Enter Description">
           </div>
           <div class="form-group">
+            <label>Select Manufacture</label>
+            <select name="manufacture_name" class="form-control">
+                <option value="">Select Manufacture</option>
+                <?php
+                    $msql = "SELECT manufacture_name FROM tbl_manufacture";
+                    $msql_run = mysqli_query($conn, $msql);
+                    while($mrow = mysqli_fetch_assoc($msql_run)){
+                        echo "<option value='" .$mrow['manufacture_name']. "'>" .$mrow['manufacture_name']. "</option>";
+                    };
+                ?>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Select Type</label>
+            <select name="prod_type" class="form-control">
+                <option value="">Select Type</option>
+                <?php
+                    $tsql = "SELECT product_type FROM product_type";
+                    $tsql_run = mysqli_query($conn, $tsql);
+                    while($trow = mysqli_fetch_assoc($tsql_run)){
+                        echo "<option value='" .$trow['product_type']. "'>" .$trow['product_type']. "</option>";
+                    };
+                ?>
+            </select>
+          </div>
+          <div class="form-group">
             <label>Product Generation:</label>
             <input type="text" name="generation" class="form-control" required placeholder="Enter Generation">
           </div>
@@ -91,7 +117,14 @@
               // db connection
               //include_once('config.php');
               // get data from DB & show
-              $psql = "SELECT * FROM tbl_product";
+              //$psql = "SELECT * FROM tbl_product";
+              $psql = "SELECT p.*, t.product_type, m.manufacture_name
+                      FROM tbl_product as p,
+                           product_type as t,
+                           tbl_manufacture as m
+                      WHERE p.manufacture_name = m.manufacture_name AND
+                            p.prod_type = t.product_type
+                      ";
               $getpsql = mysqli_query($conn, $psql);
               if (mysqli_num_rows($getpsql) > 0) {
                 while($prow = mysqli_fetch_assoc($getpsql)) {

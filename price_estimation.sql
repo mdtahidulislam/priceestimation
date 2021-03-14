@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2021 at 01:09 PM
+-- Generation Time: Mar 14, 2021 at 01:44 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `product_type` (
   `id` int(11) NOT NULL,
+  `mid` int(11) NOT NULL,
   `product_type` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -36,19 +37,9 @@ CREATE TABLE `product_type` (
 -- Dumping data for table `product_type`
 --
 
-INSERT INTO `product_type` (`id`, `product_type`) VALUES
-(19, 'computer'),
-(20, 'laptop'),
-(21, 'alur ghati'),
-(23, 'jamjam'),
-(24, 'kathal'),
-(25, 'potol tuli'),
-(26, 'goru'),
-(27, 'goru kala vuna'),
-(28, 'notun alu'),
-(29, 'jhal mur'),
-(30, 'muri'),
-(31, 'ghati');
+INSERT INTO `product_type` (`id`, `mid`, `product_type`) VALUES
+(4, 4, 'komla'),
+(34, 3, 'school');
 
 -- --------------------------------------------------------
 
@@ -82,6 +73,8 @@ CREATE TABLE `tbl_product` (
   `pid` int(11) NOT NULL,
   `prodname` varchar(500) NOT NULL,
   `descp` varchar(100) NOT NULL,
+  `manufacture_name` varchar(255) NOT NULL,
+  `prod_type` varchar(255) NOT NULL,
   `generation` varchar(100) NOT NULL,
   `model` varchar(100) NOT NULL,
   `unitprice` decimal(6,2) NOT NULL,
@@ -93,17 +86,18 @@ CREATE TABLE `tbl_product` (
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`pid`, `prodname`, `descp`, `generation`, `model`, `unitprice`, `wholesale`, `img`) VALUES
-(1, 'Latop', 'Description goes here', '5th', 'asus', '9999.99', '9999.99', ''),
-(2, 'player', 'description', '4th', 'wetewtwe', '123.00', '122.00', ''),
-(3, 'Computer', 'gajdgsjhagd', '5th Gen', 'ASUS 01', '9999.99', '9999.99', ''),
-(4, 'Computer', 'grweiyqiuwryiuqw', '1 st gen', 'deshi', '9999.99', '9999.99', ''),
-(5, 'notun', 'aHRFITQWEURFTGUIWYT', '5th Gen', 'ASUS 01', '9999.99', '9999.99', ''),
-(6, 'kolom', 'jhfdkasfjg', 'hfkjh', 'hth', '9999.99', '2124.00', ''),
-(7, 'alu', 'weuouio', 'uerouowu', 'ouweoriuo', '9999.99', '243.00', ''),
-(8, 'mobile', 'description', '3rd ', '1100', '4000.00', '3000.00', ''),
-(9, 'Computer', 'gajdgsjhagd', '5th Gen', 'ouweoriuo', '9999.99', '123.00', ''),
-(10, 'mobile', 'description', '1 st gen', '1100', '4000.00', '3000.00', 'zpc-logo.png');
+INSERT INTO `tbl_product` (`pid`, `prodname`, `descp`, `manufacture_name`, `prod_type`, `generation`, `model`, `unitprice`, `wholesale`, `img`) VALUES
+(1, 'Latop', 'Description goes here', 'asus bangla', 'computer', '5th', 'asus', '9999.99', '9999.99', ''),
+(2, 'player', 'description', 'Lenovo', 'Computer', '4th', 'wetewtwe', '123.00', '122.00', 'zpc-logo.png'),
+(3, 'Computer', 'gajdgsjhagd', '', '', '5th Gen', 'ASUS 01', '9999.99', '9999.99', ''),
+(4, 'Computer', 'grweiyqiuwryiuqw', '', '', '1 st gen', 'deshi', '9999.99', '9999.99', ''),
+(5, 'notun', 'aHRFITQWEURFTGUIWYT', '', '', '5th Gen', 'ASUS 01', '9999.99', '9999.99', ''),
+(6, 'kolom', 'jhfdkasfjg', '', '', 'hfkjh', 'hth', '9999.99', '2124.00', ''),
+(7, 'alu', 'weuouio', '', '', 'uerouowu', 'ouweoriuo', '9999.99', '243.00', ''),
+(8, 'mobile', 'description', '', '', '3rd ', '1100', '4000.00', '3000.00', ''),
+(9, 'Computer', 'gajdgsjhagd', '', '', '5th Gen', 'ouweoriuo', '9999.99', '123.00', ''),
+(10, 'mobile', 'description', '', '', '1 st gen', '1100', '4000.00', '3000.00', 'zpc-logo.png'),
+(11, 'khata', 'adffasf', 'HP', 'school', '5th Gen', 'ASUS 01', '9999.99', '9999.99', 'zpc-logo.png');
 
 --
 -- Indexes for dumped tables
@@ -135,7 +129,7 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT for table `product_type`
 --
 ALTER TABLE `product_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tbl_manufacture`
@@ -147,7 +141,7 @@ ALTER TABLE `tbl_manufacture`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -36,6 +36,34 @@
                             <input type="text" name="generation" class="form-control" required value="<?php echo $result['generation']; ?>">
                         </div>
                         <div class="form-group col-12">
+                            <label>Select Manufacture</label>
+                            <input type="hidden" name="pid" value="<?php echo $pid; ?>">
+                            <select name="manufacture_name" class="form-control">
+                                <option value="" selected><?php echo $result['manufacture_name']; ?></option>
+                                <?php
+                                    $msql = "SELECT manufacture_name FROM tbl_manufacture";
+                                    $msql_run = mysqli_query($conn, $msql);
+                                    while($mrow = mysqli_fetch_assoc($msql_run)){
+                                        echo "<option value='" .$mrow['manufacture_name']. "'>" .$mrow['manufacture_name']. "</option>";
+                                    };
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Select Type</label>
+                            <input type="hidden" name="pid" value="<?php echo $pid; ?>">
+                            <select name="prod_type" class="form-control">
+                                <option value="" selected><?php echo $result['prod_type']; ?></option>
+                                <?php
+                                    $psql = "SELECT prodname FROM tbl_product";
+                                    $psql_run = mysqli_query($conn, $psql);
+                                    while($prow = mysqli_fetch_assoc($psql_run)){
+                                        echo "<option value='" .$prow['prodname']. "'>" .$prow['prodname']. "</option>";
+                                    };
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-12">
                             <label>Product Model:</label>
                             <input type="hidden" name="pid" value="<?php echo $pid; ?>">
                             <input type="text" name="model" class="form-control" required value="<?php echo $result['model']; ?>">

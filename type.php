@@ -22,6 +22,7 @@
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Product Type</th>
+              <th scope="col">Manufacture</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -31,7 +32,11 @@
               // db connection
               include_once('config.php');
               // get data from DB & show
-              $sql = "SELECT id, product_type FROM product_type";
+              //$sql = "SELECT * FROM product_type";
+              $sql = "SELECT p.*, m.manufacture_name, m.mid 
+                        FROM product_type as p,
+                             tbl_manufacture as m
+                        WHERE p.id = m.mid";
               $getData = mysqli_query($conn, $sql);
               if (mysqli_num_rows($getData) > 0) {
                 while($row = mysqli_fetch_assoc($getData)) {
@@ -39,6 +44,7 @@
             <tr>
               <th scope="row"><?php echo $row["id"]; ?></th>
               <td><?php echo $row["product_type"]; ?></td>
+              <td><?php echo $row["manufacture_name"]; ?></td>
               <td class="action">
                   <a href="#edit<?php echo urldecode($row['id']); ?>" data-toggle="modal"  class="mr-1" title="Edit">
                     <i class="fas fa-edit"></i>

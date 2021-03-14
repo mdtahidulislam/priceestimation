@@ -26,16 +26,16 @@
                   <ul class="main-menu">     
                     <li>
                         <a href="index.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Home</a>
-                    </li>
-                    <li>
-                        <a href="type.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'type.php' ? 'active' : '';?>">Type</a>
-                    </li>
-                    <li>
-                        <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
-                    </li>  
+                    </li> 
                     <li>
                         <a href="manufacture.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'manufacture.php' ? 'active' : '';?>">Manufacture</a>
-                    </li>  
+                    </li> 
+                    <li>
+                        <a href="type.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'type.php' ? 'active' : '';?>">Type</a>
+                    </li> 
+                    <li>
+                        <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
+                    </li> 
                   </ul>
                   <div class="menu-bar d-md-none d-sm-block">
                       <i class="fas fa-bars"></i>
@@ -61,13 +61,13 @@
               <a href="index.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '';?>">Home</a>
           </li>
           <li>
+              <a href="manufacture.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'manufacture.php' ? 'active' : '';?>">Manufacture</a>
+          </li>
+          <li>
               <a href="type.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'type.php' ? 'active' : '';?>">Product Type</a>
           </li>
           <li>
               <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
-          </li>
-          <li>
-              <a href="manufacture.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'manufacture.php' ? 'active' : '';?>">Manufacture</a>
           </li>
         </ul>
     </nav>

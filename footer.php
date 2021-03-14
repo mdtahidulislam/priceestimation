@@ -49,5 +49,29 @@ $(document).ready(function(){
     $('#example').DataTable();
 } );
 </script>
+
+<!-- for indexpage jax selection -->
+<script>
+$(document).ready(function(){
+  $('#manufactureName').on('change', function(){
+    var manufID = $(this).val();
+    $('#prodType').html('');
+    if(manufID){
+      $.ajax({
+        type: 'POST',
+        url: 'ajaxdata.php',
+        data: {manu_id: manufID},
+        success: function(data){
+          $('#prodType').html(data);
+          $('#prodName').html('<option value="">Select Type First</option>');
+        }
+      });
+    } else {
+      $('#prodType').html('<option value="">Select Country First</option>');
+      $('#prodName').html('<option value="">Select Type First</option>');
+    }
+  });
+});
+</script>
 </body>
 </html>

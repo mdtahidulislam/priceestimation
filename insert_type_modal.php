@@ -12,7 +12,22 @@
             <div id="dynamic_field">
               <div class="form-row">
                 <div class="form-group col-12">
+                  <label>Enter Product Type</label>
                   <input type="text" name="producttype" required placeholder="Enter Product Type" class="form-control"/>
+                </div>
+                <div class="form-group col-12">
+                  <label>Select Manufacture</label>
+                  <select name="mid" class="form-control">
+                    <option value="">Select Manufacture</option>
+                    <?php
+                        $msql = "SELECT * FROM tbl_manufacture";
+                        $msql_run = mysqli_query($conn, $msql);
+                        while($mrow = mysqli_fetch_assoc($msql_run)){
+                            //echo "<option value='" .$mrow['manufacture_name']. "'>" .$mrow['manufacture_name']. "</option>";
+                            echo '<option value="' .$mrow['mid']. '">' .$mrow['manufacture_name']. '</option>';
+                        };
+                    ?>
+                  </select>
                 </div>
               </div>
             </div>

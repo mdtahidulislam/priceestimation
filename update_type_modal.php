@@ -12,7 +12,11 @@
             <div class="modal-body">
                 <?php
                 $id = $row['id'];
-                $query = "SELECT * FROM product_type WHERE id = $id";
+                //$query = "SELECT * FROM product_type WHERE id = $id";
+                $query = "SELECT p.*, m.manufacture_name, m.mid 
+                        FROM product_type as p,
+                             tbl_manufacture as m
+                        WHERE p.id = m.mid";
                 $getdata = mysqli_query($conn, $query);
                 $result = mysqli_fetch_assoc($getdata);
                 ?>
@@ -22,6 +26,20 @@
                         <div class="form-group col-12">
                             <input type="hidden" name="id" value="<?php echo $id; ?>">
                             Product Type: <input type="text" name="producttype" required value="<?php echo $result['product_type']; ?>" class="form-control"/>
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Select Manufacture</label>
+                            <select name="mid" class="form-control">
+                                <option value="" selected><?php echo $result['manufacture_name']; ?></option>
+                                <?php
+                                    $msql = "SELECT * FROM tbl_manufacture";
+                                    $msql_run = mysqli_query($conn, $msql);
+                                    while($mrow = mysqli_fetch_assoc($msql_run)){
+                                        //echo "<option value='" .$mrow['manufacture_name']. "'>" .$mrow['manufacture_name']. "</option>";
+                                        echo '<option value="' .$mrow['mid']. '">' .$mrow['manufacture_name']. '</option>';
+                                    };
+                                ?>
+                            </select>
                         </div>
                     </div>
                     <!-- form footer -->

@@ -5,7 +5,8 @@
     if (isset($_POST['action'])) {
         if ($_POST['action'] == 'addtype') {
             $prodType   = $_POST["producttype"];
-            $query = "INSERT INTO product_type(product_type) VALUES ('$prodType')";
+            $mid   = $_POST["mid"];
+            $query = "INSERT INTO product_type(product_type, mid) VALUES ('$prodType', '$mid')";
             $result = mysqli_query($conn, $query);
             echo "Data inserted successfully..";
             header("Location: type.php");
@@ -13,6 +14,8 @@
             //get input fileds
             $prodname = $_POST['prodname'];
             $description = $_POST['descp'];
+            $manufacture_name = $_POST['manufacture_name'];
+            $prod_type = $_POST['prod_type'];
             $generation = $_POST['generation'];
             $model = $_POST['model'];
             $unitprice = $_POST['unitprice'];
@@ -27,8 +30,8 @@
 
 
             // insert query
-            $pquery = "INSERT INTO tbl_product (prodname, descp,  generation, model, unitprice, wholesale, img) 
-                    VALUES('$prodname', '$description', '$generation', '$model', '$unitprice', '$wholesaleprice', '$file_name')";
+            $pquery = "INSERT INTO tbl_product (prodname, descp, manufacture_name, prod_type, generation, model, unitprice, wholesale, img) 
+                    VALUES('$prodname', '$description', '$manufacture_name', '$prod_type', '$generation', '$model', '$unitprice', '$wholesaleprice', '$file_name')";
             $pquery_run = mysqli_query($conn, $pquery);
             echo "Data inserted successfully..";
             header("Location: product.php");
