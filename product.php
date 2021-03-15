@@ -35,10 +35,10 @@
           </div>
           <div class="form-group">
             <label>Select Manufacture</label>
-            <select name="manufacture_name" class="form-control">
+            <select name="manufacture_name" class="form-control" required>
                 <option value="">Select Manufacture</option>
                 <?php
-                    $msql = "SELECT manufacture_name FROM tbl_manufacture";
+                    $msql = "SELECT * FROM tbl_manufacture";
                     $msql_run = mysqli_query($conn, $msql);
                     while($mrow = mysqli_fetch_assoc($msql_run)){
                         echo "<option value='" .$mrow['manufacture_name']. "'>" .$mrow['manufacture_name']. "</option>";
@@ -48,10 +48,10 @@
           </div>
           <div class="form-group">
             <label>Select Type</label>
-            <select name="prod_type" class="form-control">
+            <select name="prod_type" class="form-control" required>
                 <option value="">Select Type</option>
                 <?php
-                    $tsql = "SELECT product_type FROM product_type";
+                    $tsql = "SELECT * FROM product_type";
                     $tsql_run = mysqli_query($conn, $tsql);
                     while($trow = mysqli_fetch_assoc($tsql_run)){
                         echo "<option value='" .$trow['product_type']. "'>" .$trow['product_type']. "</option>";

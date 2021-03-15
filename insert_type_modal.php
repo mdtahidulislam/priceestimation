@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group col-12">
                   <label>Select Manufacture</label>
-                  <select name="mid" class="form-control">
+                  <select name="mid" class="form-control" required>
                     <option value="">Select Manufacture</option>
                     <?php
                         $msql = "SELECT * FROM tbl_manufacture";

@@ -191,7 +191,7 @@ td.action i:hover {
   background-color: transparent;
 }
 
-label {
+.dataTables_wrapper label {
   color: #C7CACF;
 }
 

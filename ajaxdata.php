@@ -1,7 +1,7 @@
 <?php include('config.php'); ?>
 
 <?php
-    // manufacture selection
+    // type selection based on manufacture
     if (isset($_POST['manu_id']) && !empty($_POST['manu_id'])) {
         $manu_id = $_POST['manu_id'];
         $sql = "SELECT * FROM product_type WHERE mid = $manu_id"; 
@@ -16,13 +16,10 @@
         }
     }
 
-    // type selection
-    if (isset($_POST['prod_type']) && !empty($_POST['prod_type'])) {
-        $psql = "SELECT p.*, t.product_type
-                      FROM tbl_product as p,
-                           product_type as t
-                      WHERE p.prod_type = t.product_type
-                      "; 
+    // product selection based on type
+    if (isset($_POST['type_id']) && !empty($_POST['type_id'])) {
+        $type_id = $_POST['type_id'];
+        $psql = "SELECT * FROM tbl_product WHERE prod_type = $type_id"; 
         $query = mysqli_query($conn, $sql);
         if (mysqli_num_rows($query) > 0) {
             echo '<option value="">Select Product</option>';

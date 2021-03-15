@@ -36,6 +36,10 @@
                     <li>
                         <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
                     </li> 
+                    <li>
+                        <a href="#register" data-toggle="modal" class="<?php echo basename($_SERVER['PHP_SELF']) == 'registration.php' ? 'active' : '';?>">Register</a>
+                        
+                    </li> 
                   </ul>
                   <div class="menu-bar d-md-none d-sm-block">
                       <i class="fas fa-bars"></i>
@@ -68,6 +72,9 @@
           </li>
           <li>
               <a href="product.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'product.php' ? 'active' : '';?>">Product</a>
+          </li>
+          <li>
+              <a href="#register" data-toggle="modal" class="<?php echo basename($_SERVER['PHP_SELF']) == 'registration.php' ? 'active' : '';?>">Register</a>
           </li>
         </ul>
     </nav>

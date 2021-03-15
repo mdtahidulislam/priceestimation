@@ -2,6 +2,9 @@
   <img src="assets/img/zpc-logo.png" alt="Zeropoint" class="footer-logo">
 </footer><!-- end footer area -->
 
+<!-- registration modal -->
+<?php include('register_modal.php'); ?>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -53,6 +56,7 @@ $(document).ready(function(){
 <!-- for indexpage jax selection -->
 <script>
 $(document).ready(function(){
+  // type selection based on manufacture
   $('#manufactureName').on('change', function(){
     var manufID = $(this).val();
     $('#prodType').html('');
@@ -67,7 +71,24 @@ $(document).ready(function(){
         }
       });
     } else {
-      $('#prodType').html('<option value="">Select Country First</option>');
+      $('#prodType').html('<option value="">Select Manufacture First</option>');
+      $('#prodName').html('<option value="">Select Type First</option>');
+    }
+  });
+  // product selection based on type
+  $('#prodType').on('change', function(){
+    var typeId = $(this).val();
+    alert(typeId);
+    if (typeId) {
+      $.ajax({
+        type: 'POST',
+        url: 'ajaxdata.php',
+        data: {type_id: typeId},
+        success: function(data){
+          $('#prodName').html(data);
+        }
+      });
+    } else {
       $('#prodName').html('<option value="">Select Type First</option>');
     }
   });
